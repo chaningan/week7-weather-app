@@ -10,6 +10,8 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="src/styles.css" />
     <title>SheCodes Vanilla Weather App</title>
   </head>
@@ -18,10 +20,10 @@
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <div class="overview">
-            <h1>San Diego</h1>
+            <h1 id="city"></h1>
             <ul>
               <li>Tuesday 4:47</li>
-              <li>Rain</li>
+              <li id="weather-description"></li>
             </ul>
           </div>
           <div class="row">
@@ -33,7 +35,7 @@
                   id="rain-img"
                 />
                 <div>
-                  <strong id="temperature">14</strong
+                  <strong id="temperature"></strong
                   ><span class="units"> °<a href="#">C</a></span>
                 </div>
               </div>
@@ -41,9 +43,8 @@
 
             <div class="col-6">
               <ul>
-                <li>Precipitation: 61%</li>
-                <li>Humidity: 91%</li>
-                <li>Wind: 10 mph</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> mph</li>
               </ul>
             </div>
           </div>
