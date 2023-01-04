@@ -1,3 +1,10 @@
-h1 {
-  color: red;
+.weather-app {
+  border: 2px solid black;
+}
+.date-description {
+  list-style: none;
+}
+
+#rain-img {
+  width: 50px;
 }
