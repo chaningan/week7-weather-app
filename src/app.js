@@ -34,7 +34,6 @@ function formatDay(timestamp) {
 
 //function 5
 function displayForecast(response) {
-  console.log("displayforecast", response.data.daily);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
@@ -73,10 +72,9 @@ function displayForecast(response) {
 
 //function 6
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "49c0a79d5c55e2e846215d64443bcc56";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -119,8 +117,13 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
-  console.log(cityInputElement.value);
 }
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+search("San Diego");
+
+//UNIT CONVERSIONS
 
 //function 3
 // function displayFahrenheitTemp(event) {
@@ -146,13 +149,8 @@ function handleSubmit(event) {
 //global variables: outside of all functions but can be accessed within any function
 // let celsiusTemp = null;
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
-
 // let fahrenheitLink = document.querySelector("#fahrenheit-link");
 // fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 // let celsiusLink = document.querySelector("#celsius-link");
 // celsiusLink.addEventListener("click", displayCelsiusTemp);
-
-search("San Diego");
