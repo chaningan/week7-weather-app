@@ -26,7 +26,8 @@ function formatDate(timestamp) {
 }
 
 //function 5
-function displayForecast() {
+function displayForecast(response) {
+  console.log("displayforecast", response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Thur", "Fri", "Sat", "Sun", "Mon"];
@@ -55,6 +56,14 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "49c0a79d5c55e2e846215d64443bcc56";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 //Function #1
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
@@ -78,6 +87,8 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 //function 2: takes care of making an ajax call, api call, searching for a city, updating UI
@@ -129,4 +140,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 search("San Diego");
-displayForecast();
