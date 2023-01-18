@@ -1,15 +1,28 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url("https://i.pinimg.com/originals/d0/cf/fc/d0cffc06b6dd112a3bf009e03b0a698e.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+small {
+  color: white;
 }
 
 a {
   text-decoration: none;
+  color: rgb(78, 44, 5);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: white;
 }
 
 h1 {
-  color: #878787;
-  font-size: 24px;
-  font-weight: 100;
+  color: rgb(109, 61, 16);
+  font-size: 28px;
+  font-weight: bolder;
   line-height: 28px;
   margin-bottom: 0;
 }
@@ -23,13 +36,18 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
-  color: rgb(135, 135, 135);
+  color: rgb(109, 61, 16);
   font-size: 16px;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 19px;
 }
 li:first-letter {
   text-transform: capitalize;
+}
+
+.btn {
+  background-color: rgb(109, 61, 16);
+  border: 1px solid white;
 }
 
 .weather-app-wrapper {
@@ -38,7 +56,7 @@ li:first-letter {
 }
 
 .weather-app {
-  border: 2px solid rgb(197, 197, 197);
+  border: 3px solid white;
   padding: 20px;
   border-radius: 5px;
 }
@@ -49,12 +67,12 @@ li:first-letter {
 
 .weather-temperature img {
   margin-right: 5px;
-  height: 64px;
-  width: 64px;
+  height: 72px;
+  width: 72px;
 }
 
 .weather-temperature strong {
-  color: rgb(33, 33, 33);
+  color: rgb(109, 61, 16);
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
@@ -64,6 +82,7 @@ li:first-letter {
   position: relative;
   font-size: 16px;
   top: -34px;
+  color: rgb(109, 61, 16);
 }
 
 .weather-temperature .active {
@@ -79,13 +98,16 @@ li:first-letter {
 }
 
 .weather-forecast-date {
-  font-size: 16px;
-  opacity: 0.6;
+  font-size: 18px;
+  font-weight: bolder;
+  opacity: 0.9;
+  color: rgb(77, 43, 12);
 }
 
 .weather-forecast-temperatures {
-  font-size: 13px;
+  font-size: 16px;
+  color: white;
 }
 .weather-forecast-temp-min {
-  opacity: 0.6;
+  opacity: 0.7;
 }
